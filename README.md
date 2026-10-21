@@ -1,6 +1,6 @@
 # Brownian Motion Lab
 
-A small, dependency-light browser simulation of Brownian motion. The project now uses Vite and native browser APIs instead of the retired Grunt, RequireJS, Compass, jQuery, and PhysicsJS toolchain.
+A small, dependency-light browser simulation of Brownian motion. The project uses Vite and native browser APIs.
 
 ## Requirements
 
