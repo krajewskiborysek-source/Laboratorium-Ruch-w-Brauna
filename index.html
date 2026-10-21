@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7fa" />
+    <meta name="description" content="Poznaj ruchy Browna: jego historię, najważniejsze równania i interaktywną symulację." />
+    <title>Laboratorium ruchów Browna</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Fizyka w interaktywnej formie</p>
+          <h1>Ruchy Browna</h1>
+          <p class="intro">Poznaj historię, naukowe podstawy i ruch niewidocznych cząstek.</p>
+        </div>
+        <div class="header-actions">
+          <button id="theme-button" class="button button-secondary theme-button" type="button" aria-label="Włącz tryb ciemny" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">☾</span>
+            <span id="theme-label">Tryb ciemny</span>
+          </button>
+          <button id="pause-button" class="button button-secondary" type="button" aria-pressed="false">Wstrzymaj</button>
+        </div>
+      </header>
+
+      <nav class="page-nav" aria-label="Główne strony" role="tablist">
+        <button class="nav-tab is-active" id="tab-history" type="button" role="tab" aria-selected="true" aria-controls="page-history" data-page="history">Historia</button>
+        <button class="nav-tab" id="tab-equations" type="button" role="tab" aria-selected="false" aria-controls="page-equations" data-page="equations" tabindex="-1">Równania</button>
+        <button class="nav-tab" id="tab-simulation" type="button" role="tab" aria-selected="false" aria-controls="page-simulation" data-page="simulation" tabindex="-1">Symulacja</button>
+        <button class="nav-tab" id="tab-quiz" type="button" role="tab" aria-selected="false" aria-controls="page-quiz" data-page="quiz" tabindex="-1">Quiz</button>
+      </nav>
+
+      <section id="page-history" class="page-panel content-page" role="tabpanel" aria-labelledby="tab-history" data-panel="history">
+        <div class="article-hero">
+          <p class="eyebrow">Mała wskazówka, wielkie konsekwencje</p>
+          <h2>Od zagadkowego pyłku do niewidocznych atomów</h2>
+          <p>Ruchy Browna pomogły przekształcić ideę atomów z użytecznej hipotezy w teorię, którą można sprawdzić za pomocą pomiarów.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-card">
+            <span class="timeline-date">1827</span>
+            <div><h3>Robert Brown dostrzega ruch</h3><p>Obserwując pod mikroskopem ziarenka pyłku w wodzie, szkocki botanik Robert Brown zauważył ich nieustanny, nieregularny ruch. Sprawdził, że nie dotyczy on wyłącznie żywego pyłku: podobnie zachowywały się także drobiny innych materiałów.</p></div>
+          </article>
+          <article class="timeline-card">
+            <span class="timeline-date">1905</span>
+            <div><h3>Einstein wyjaśnia przyczynę</h3><p>Albert Einstein opisał, jak niezliczone, niewidoczne cząsteczki płynu zderzają się z widoczną, zawieszoną w nim drobiną. Uderzenia są nierównomierne, dlatego drobina chaotycznie się przemieszcza. Teoria Einsteina powiązała też przebytą odległość z temperaturą, rozmiarem cząstki i lepkością płynu.</p></div>
+          </article>
+          <article class="timeline-card">
+            <span class="timeline-date">1908–1909</span>
+            <div><h3>Perrin weryfikuje teorię atomową</h3><p>Francuski fizyk Jean Perrin dokładnie mierzył ruch zawieszonych cząstek i uzyskał wyniki zgodne z przewidywaniami Einsteina. Jego eksperymenty dostarczyły mocnych dowodów na istnienie atomów i cząsteczek. W 1926 roku Perrin otrzymał Nagrodę Nobla w dziedzinie fizyki za badania nad nieciągłą budową materii.</p></div>
+          </article>
+          <article class="timeline-card">
+            <span class="timeline-date">Późniejsze odkrycia</span>
+            <div><h3>Podstawa współczesnej nauki</h3><p>Ruchy Browna stały się modelem dyfuzji i procesów losowych. Powiązana z nimi matematyka pomaga dziś opisywać rozchodzenie się ciepła, przemieszczanie cząsteczek przez błony komórkowe, modele finansowe i chaotyczny ruch mikroskopijnych urządzeń. Ta sama idea — suma wielu małych, losowych kroków — pojawia się w różnych dziedzinach nauki.</p></div>
+          </article>
+        </div>
+        <aside class="fact-card"><strong>Ważne rozróżnienie</strong><p>Pyłek nie porusza się dlatego, że jest żywy. Jego ruch wynika z nieustannych zderzeń z cząsteczkami wody nadlatującymi z różnych kierunków.</p></aside>
+      </section>
+
+      <section id="page-equations" class="page-panel content-page" role="tabpanel" aria-labelledby="tab-equations" data-panel="equations" hidden>
+        <div class="article-hero">
+          <p class="eyebrow">Matematyka ruchu losowego</p>
+          <h2>Trzy równania, błądząca cząstka</h2>
+          <p>Te równania opisują średnie zachowanie wielu cząstek. Tor ruchu pojedynczej cząstki pozostaje nieprzewidywalny.</p>
+        </div>
+        <div class="equation-grid">
+          <article class="equation-card">
+            <span class="equation-number">01 · Przebyta droga</span>
+            <div class="equation" aria-label="średni kwadrat przesunięcia równa się dwa razy współczynnik dyfuzji razy czas">⟨x²⟩ = 2Dt</div>
+            <p><strong>Średni kwadrat przesunięcia</strong> to średnia z kwadratów odległości od punktu początkowego. W czasie <em>t</em> rośnie proporcjonalnie do współczynnika dyfuzji <em>D</em>.</p>
+            <p><strong>Mówiąc prościej:</strong> po czterokrotnie dłuższym czasie średni kwadrat odległości będzie cztery razy większy. Sama typowa odległość wzrośnie około dwukrotnie.</p>
+          </article>
+          <article class="equation-card">
+            <span class="equation-number">02 · Współczynnik dyfuzji</span>
+            <div class="equation" aria-label="współczynnik dyfuzji równa się stała Boltzmanna razy temperatura podzielone przez sześć pi razy lepkość razy promień">D = <span class="fraction"><span>k<sub>B</sub>T</span><span>6πηr</span></span></div>
+            <p>To równanie Stokesa–Einsteina dla małej, kulistej cząstki w płynie. <em>T</em> oznacza temperaturę w kelwinach, <em>η</em> — lepkość, a <em>r</em> — promień cząstki. <em>k<sub>B</sub></em> to stała Boltzmanna, określająca niewielką energię przypadającą na jednostkę temperatury.</p>
+            <p><strong>Przewidywania:</strong> cieplejszy płyn oznacza szybszą dyfuzję, a większa lepkość lub większa cząstka — wolniejszą.</p>
+          </article>
+          <article class="equation-card">
+            <span class="equation-number">03 · Rozrzut położenia w 2D</span>
+            <div class="equation" aria-label="średni kwadrat odległości od początku układu równa się cztery razy współczynnik dyfuzji razy czas">⟨r²⟩ = 4Dt</div>
+            <p>Na płaszczyźnie cząstka może przemieszczać się w kierunku <em>x</em> i <em>y</em>. Każdy z tych kierunków wnosi składnik <em>2Dt</em>, więc całkowity średni kwadrat odległości wynosi <em>4Dt</em>.</p>
+            <p><strong>Dlaczego to ważne:</strong> nasza symulacja jest przedstawiona na dwuwymiarowym ekranie, dlatego ten wzór najlepiej opisuje obserwowany ruch.</p>
+          </article>
+        </div>
+        <aside class="fact-card"><strong>Oznaczenia</strong><p><em>x</em> lub <em>r</em>: odległość od punktu początkowego · <em>t</em>: czas · <em>D</em>: szybkość rozprzestrzeniania · <em>T</em>: temperatura · <em>η</em>: opór płynu wobec przepływu.</p></aside>
+        <p class="equation-note">Nawiasy ⟨ ⟩ oznaczają „średnią dla wielu cząstek lub wielu powtórzonych pomiarów”. Podniesienie odległości do kwadratu zapobiega znoszeniu się wartości dodatnich i ujemnych.</p>
+      </section>
+
+      <section id="page-simulation" class="page-panel" role="tabpanel" aria-labelledby="tab-simulation" data-panel="simulation" hidden>
+        <section class="simulation-card" aria-label="Symulacja ruchów Browna">
+          <div class="canvas-wrap">
+            <canvas id="simulation" aria-label="Animowana symulacja ruchu cząstek Browna"></canvas>
+            <div id="simulation-status" class="status" role="status" aria-live="polite"></div>
+          </div>
+          <div class="toolbar">
+            <p class="hint">Przeciągnij dużą cząstkę, aby ją przesunąć.</p>
+            <button id="paths-button" class="button button-secondary" type="button" aria-pressed="true">Ukryj ślady</button>
+            <button id="download-button" class="button button-primary" type="button">Pobierz obraz</button>
+          </div>
+        </section>
+        <section class="controls-card" aria-label="Sterowanie symulacją">
+          <div class="control"><label for="energy">Energia <output id="energy-value">1,0×</output></label><input id="energy" type="range" min="0.1" max="10" step="0.1" value="1" /></div>
+          <div class="control"><label for="size-ratio">Rozmiar cząstek <output id="size-value">15%</output></label><input id="size-ratio" type="range" min="0.1" max="0.6" step="0.01" value="0.15" /></div>
+          <div class="control"><label for="mass-ratio">Masa dużej cząstki <output id="mass-value">6%</output></label><input id="mass-ratio" type="range" min="0.001" max="1" step="0.001" value="0.06" /></div>
+          <div class="control"><label for="tracer-opacity">Widoczność małych cząstek <output id="opacity-value">30%</output></label><input id="tracer-opacity" type="range" min="0" max="1" step="0.01" value="0.3" /></div>
+        </section>
+        <footer class="page-footer"><p>Ruchy Browna to losowe przemieszczanie się cząstek zawieszonych w płynie.</p><p>Zmieniaj energię, rozmiar i masę cząstek, aby zobaczyć wpływ tych parametrów na ich ruch.</p></footer>
+      </section>
+
+      <section id="page-quiz" class="page-panel content-page" role="tabpanel" aria-labelledby="tab-quiz" data-panel="quiz" hidden>
+        <div class="article-hero">
+          <p class="eyebrow">Sprawdź swoją wiedzę</p>
+          <h2>Quiz o ruchach Browna</h2>
+          <p>Odpowiedz na dziewięć pytań o historii, dyfuzji i równaniach. Pytania są podzielone na trzy poziomy trudności.</p>
+        </div>
+        <form id="quiz-form" class="quiz-form">
+          <div id="quiz-questions"></div>
+          <div class="quiz-actions">
+            <button id="quiz-submit" class="button button-primary" type="submit">Sprawdź odpowiedzi</button>
+            <button id="quiz-reset" class="button button-secondary" type="button" hidden>Spróbuj ponownie</button>
+            <p id="quiz-result" class="quiz-result" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
